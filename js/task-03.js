@@ -12,3 +12,22 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const ul = document.querySelector(".gallery");
+createMarkup(images);
+
+function createMarkup(arr) {
+  const markup = arr;
+     .map(({ url, alt }) =>
+    `<li>
+    <img 
+      src="${url}"
+      alt="${alt}" />
+
+  </li>`
+  )
+    .join(" ");
+  console.log(markup);
+
+  ul.insertAdjacentHTML("beforebegin", markup)
+}
