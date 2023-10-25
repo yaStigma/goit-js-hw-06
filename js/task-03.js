@@ -13,13 +13,13 @@ const images = [
   },
 ];
 
-const ul = document.querySelector(".gallery");
+const list = document.querySelector(".gallery");
 createMarkup(images);
 
 function createMarkup(arr) {
-  const markup = arr;
-     .map(({ url, alt }) =>
-    `<li>
+  const markup = arr
+     .map (({ url, alt }) =>
+`    <li class="picture">
     <img 
       src="${url}"
       alt="${alt}" />
@@ -29,5 +29,6 @@ function createMarkup(arr) {
     .join(" ");
   console.log(markup);
 
-  ul.insertAdjacentHTML("beforebegin", markup)
+  list.insertAdjacentHTML("beforeend", markup);
 }
+ 
