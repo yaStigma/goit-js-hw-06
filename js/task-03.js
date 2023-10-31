@@ -14,11 +14,8 @@ const images = [
 ];
 
 const list = document.querySelector(".gallery");
-createMarkup(images);
 
-function createMarkup(arr) {
-  const markup = arr
-     .map (({ url, alt }) =>
+  const markup = images.map (({ url, alt }) =>
 `    <li class="picture">
     <img 
       src="${url}"
@@ -27,8 +24,5 @@ function createMarkup(arr) {
   </li>`
   )
     .join(" ");
-  console.log(markup);
 
-  list.insertAdjacentHTML("beforeend", markup);
-}
- 
+   list.insertAdjacentHTML("beforeend", markup);
